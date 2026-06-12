@@ -38,7 +38,7 @@ export function ProfileCard() {
             {/* Photo container */}
             <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-purple-400/50 bg-gradient-to-br from-purple-900 to-fuchsia-900">
               <Image
-                src="/profile.jpg" // Substitua pelo caminho da sua foto
+                src="./" // Substitua pelo caminho da sua foto
                 alt="Foto de perfil"
                 width={112}
                 height={112}

@@ -5,7 +5,9 @@ import { HeroCard } from "@/components/portfolio/hero-card"
 import { ProjectCard } from "@/components/portfolio/project-card"
 import { SkillsCard } from "@/components/portfolio/skills-card"
 import { AboutCard } from "@/components/portfolio/about-card"
-import { EngineeringCard } from "@/components/portfolio/engineering-card"
+import { HeroWidgetsRow } from "@/components/sections/HeroWidgetsRow"
+import { ArchitectureSection } from "@/components/sections/ArchitectureSection"
+import { PerformanceSection } from "@/components/sections/PerformanceSection"
 import { ContactCard } from "@/components/portfolio/contact-card"
 import { Star, Sparkles } from "lucide-react"
 import { LanguageProvider, useLanguage } from "@/lib/language-context"
@@ -55,7 +57,13 @@ function PortfolioContent() {
           {/* About & Skills Row */}
           <AboutCard />
           <SkillsCard />
+
+          {/* Widgets Row (Status, GitHub, Spotify) */}
+          <HeroWidgetsRow />
           
+          {/* Architecture Section (replaces Engineering) */}
+          <ArchitectureSection />
+
           {/* Projects Section */}
           <div id="projects" className="col-span-full">
             <div className="flex items-center gap-4 mb-8 mt-8">
@@ -66,7 +74,7 @@ function PortfolioContent() {
               <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
             </div>
           </div>
-          
+
           {projects.map((project) => (
             <ProjectCard
               key={project.title}
@@ -77,19 +85,11 @@ function PortfolioContent() {
               featured={project.featured}
             />
           ))}
+
+          {/* Performance Section */}
+          <PerformanceSection />
           
-          {/* Engineering Section */}
-          <div className="col-span-full mt-4">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-accent" />
-                <h2 className="text-2xl font-bold text-foreground">{t.engineering.sectionTitle}</h2>
-              </div>
-              <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
-            </div>
-          </div>
-          
-          <EngineeringCard />
+          {/* (Engineering section removed — replaced by ArchitectureSection above) */}
           
           {/* Contact Section */}
           <ContactCard />
