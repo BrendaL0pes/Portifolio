@@ -1,99 +1,88 @@
 "use client"
 
-import { Star, Sparkles } from "lucide-react"
+import { Star } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
-import Image from "next/image"
 
 export function ProfileCard() {
   const { t } = useLanguage()
 
   return (
-    <div className="relative group">
-      {/* Outer glow effect */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-fuchsia-500 to-purple-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-80 transition-opacity duration-500 animate-pulse" />
+    <div className="relative w-full max-w-sm">
+      {/* Outer glow effect - STRONG */}
+      <div className="absolute -inset-3 bg-primary/20 rounded-3xl blur-3xl pointer-events-none" />
       
       {/* Card container */}
-      <div className="relative bg-[#0f0a1a]/95 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-6 shadow-2xl shadow-purple-500/20 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-purple-500/30">
-        {/* Decorative stars */}
-        <div className="absolute top-3 right-3">
-          <Star className="w-4 h-4 text-purple-400 fill-purple-400/30 animate-pulse" />
-        </div>
-        <div className="absolute bottom-4 left-4 animate-bounce" style={{ animationDuration: "4s" }}>
-          <Sparkles className="w-3 h-3 text-fuchsia-400" />
-        </div>
-        <div className="absolute top-12 left-3 animate-pulse" style={{ animationDelay: "1s" }}>
-          <Star className="w-3 h-3 text-purple-300 fill-purple-300/30" />
-        </div>
+      <div className="relative bg-card border border-border rounded-3xl p-8 z-10">
+        {/* Decorative stars inside card - Top corners */}
+        <Star className="absolute top-4 left-4 w-5 h-5 text-accent/40" />
+        <Star className="absolute top-4 right-4 w-5 h-5 text-accent/40" />
         
-        {/* Glassmorphism inner glow */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/10 via-transparent to-fuchsia-500/10 pointer-events-none" />
-        
-        <div className="relative flex flex-col items-center gap-4">
-          {/* Profile photo with glowing border */}
+        {/* Content wrapper */}
+        <div className="flex flex-col items-center gap-6">
+          {/* Avatar Circle with border and status */}
           <div className="relative">
-            {/* Animated glow ring */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-fuchsia-500 to-purple-500 rounded-full blur-sm animate-pulse" />
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-fuchsia-400 to-purple-600 rounded-full" />
-            
-            {/* Photo container */}
-            <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-purple-400/50 bg-gradient-to-br from-purple-900 to-fuchsia-900">
-              <Image
-                src="./" // Substitua pelo caminho da sua foto
-                alt="Foto de perfil"
-                width={112}
-                height={112}
-                className="w-full h-full object-cover"
-              />
+            {/* Avatar circle with thick primary border */}
+            <div className="w-32 h-32 rounded-full border-4 border-primary bg-secondary flex items-center justify-center">
+              <span className="text-3xl font-bold text-primary">BM</span>
             </div>
             
-            {/* Online indicator */}
-            <div className="absolute bottom-1 right-1 w-5 h-5 bg-[#0f0a1a] rounded-full flex items-center justify-center">
-              <div className="relative">
-                <span className="absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75 animate-ping"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-400 border border-green-300"></span>
-              </div>
+            {/* Green status indicator - bottom right */}
+            <div className="absolute bottom-1 right-1 w-5 h-5 bg-card rounded-full flex items-center justify-center border-2 border-card">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
+              </span>
             </div>
           </div>
           
-          {/* Name */}
+          {/* Name and Title */}
           <div className="text-center">
-            <h3 className="text-xl font-bold text-white mb-0.5">
+            <h3 className="text-2xl font-bold text-foreground mb-1">
               Brenda Medeiros
             </h3>
-            <p className="text-sm font-medium bg-gradient-to-r from-purple-300 via-fuchsia-300 to-purple-300 bg-clip-text text-transparent">
-              {t.hero.role}
+            <p className="text-muted-foreground">
+              Software Engineer
             </p>
           </div>
           
-          {/* Status badge */}
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/30 rounded-full">
+          {/* Availability Badge */}
+          <div className="flex items-center gap-2 px-4 py-2 bg-secondary border border-border rounded-full">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
-            <span className="text-xs font-medium text-purple-200">
-              {t.profile.available}
+            <span className="text-xs font-medium text-muted-foreground">
+              Available to work
             </span>
           </div>
           
-          {/* Decorative bottom line */}
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent mt-1" />
+          {/* Divider */}
+          <div className="w-full h-px bg-border" />
           
-          {/* Quick stats */}
-          <div className="flex items-center justify-center gap-6 text-center">
-            <div>
-              <p className="text-lg font-bold text-white">3+</p>
-              <p className="text-xs text-purple-300/70">{t.profile.projects}</p>
+          {/* Footer Stats - 3 blocks separated by vertical lines */}
+          <div className="flex items-center justify-center gap-0 w-full">
+            {/* Block 1 */}
+            <div className="flex-1 text-center">
+              <p className="text-lg font-bold text-foreground">3+</p>
+              <p className="text-xs text-muted-foreground">Projects</p>
             </div>
-            <div className="w-px h-8 bg-purple-500/30" />
-            <div>
-              <p className="text-lg font-bold text-white">Java</p>
-              <p className="text-xs text-purple-300/70">{t.profile.focus}</p>
+            
+            {/* Vertical divider */}
+            <div className="w-px h-12 bg-border" />
+            
+            {/* Block 2 */}
+            <div className="flex-1 text-center">
+              <p className="text-lg font-bold text-foreground">Java</p>
+              <p className="text-xs text-muted-foreground">Focus</p>
             </div>
-            <div className="w-px h-8 bg-purple-500/30" />
-            <div>
-              <p className="text-lg font-bold text-white">AI</p>
-              <p className="text-xs text-purple-300/70">{t.profile.interest}</p>
+            
+            {/* Vertical divider */}
+            <div className="w-px h-12 bg-border" />
+            
+            {/* Block 3 */}
+            <div className="flex-1 text-center">
+              <p className="text-lg font-bold text-foreground">AI</p>
+              <p className="text-xs text-muted-foreground">Interest</p>
             </div>
           </div>
         </div>
