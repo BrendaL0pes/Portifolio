@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0d0a14;
+  --foreground: #f5f5f5;
+  --card: #1a1425;
+  --card-foreground: #f5f5f5;
+  --popover: #1a1425;
+  --popover-foreground: #f5f5f5;
+  --primary: #cb6ce6;
+  --primary-foreground: #ffffff;
+  --secondary: #251d35;
+  --secondary-foreground: #e5e5e5;
+  --muted: #251d35;
+  --muted-foreground: #a3a3a3;
+  --accent: #e879f9;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #352b4a;
+  --input: #251d35;
+  --ring: #cb6ce6;
+  --chart-1: #cb6ce6;
+  --chart-2: #e879f9;
+  --chart-3: #a78bfa;
+  --chart-4: #67e8f9;
+  --chart-5: #f9a8d4;
+  --radius: 0.75rem;
+  --sidebar: #12101a;
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-primary: #cb6ce6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #251d35;
+  --sidebar-accent-foreground: #e5e5e5;
+  --sidebar-border: #352b4a;
+  --sidebar-ring: #cb6ce6;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Gradient text animation */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Neon glow animation for profile card */
+@keyframes neon-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4),
+                0 0 40px rgba(168, 85, 247, 0.2),
+                0 0 60px rgba(217, 70, 239, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6),
+                0 0 60px rgba(168, 85, 247, 0.4),
+                0 0 80px rgba(217, 70, 239, 0.2);
+  }
+}
+
+.animate-neon-glow {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+/* Ping animation for status indicator */
+@keyframes ping-aim {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-ping-aim {
+  animation: ping-aim 1.8s ease-in-out infinite;
+}
+
+/* Spotify progress bar animation */
+@keyframes spotify-fill {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+.animate-spotify-fill {
+  animation: spotify-fill 4s linear infinite;
+}

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "next build && wrangler pages deploy out --project-name=swe-brendalopes-dev",
+    "deploy:prod": "next build && wrangler pages deploy out --project-name=swe-brendalopes-dev --branch=main"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

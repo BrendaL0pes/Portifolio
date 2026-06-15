@@ -1,92 +1,49 @@
 "use client"
 
-import { Github, Linkedin, Mail, ArrowUpRight, Send, Sparkles } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Mail } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
-
-const contacts = [
-  {
-    name: "GitHub",
-    icon: Github,
-    href: "https://github.com",
-    handle: "@brendamedeiros",
-    color: "hover:bg-foreground/10"
-  },
-  {
-    name: "LinkedIn",
-    icon: Linkedin,
-    href: "https://linkedin.com",
-    handle: "/in/brendamedeiros",
-    color: "hover:bg-blue-500/10"
-  },
-  {
-    name: "Email",
-    icon: Mail,
-    href: "mailto:contato@brendamedeiros.dev",
-    handle: "contato@brendamedeiros.dev",
-    color: "hover:bg-primary/10"
-  }
-]
 
 export function ContactCard() {
   const { t } = useLanguage()
 
   return (
-    <section id="contact" className="col-span-full bg-card/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-border/50 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
-      {/* Decorative elements */}
-      <div className="absolute top-6 right-6">
-        <Sparkles className="w-6 h-6 text-primary/30" />
+    <section id="contact" className="bg-primary/[0.04] text-center px-6 py-8">
+      <p className="text-2xl font-medium text-white mb-1.5">{t.contact.title}</p>
+      <p className="text-[13px] text-white/35 mb-6">{t.contact.description}</p>
+
+      <div className="flex justify-center gap-2.5 flex-wrap">
+        <a
+          href="https://linkedin.com/in/brenda-medeiros-lopes"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-[13px] font-medium px-4 py-2 rounded-lg border border-primary/40 bg-primary/20 text-accent hover:bg-primary/30 transition-colors"
+        >
+          <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-accent" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/brendamedeiros"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-[13px] font-medium px-4 py-2 rounded-lg border border-white/15 bg-white/[0.04] text-white/70 hover:bg-white/[0.08] hover:text-white transition-colors"
+        >
+          <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-white/60" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+        <a
+          href={`mailto:${t.contact.email}`}
+          className="inline-flex items-center gap-1.5 text-[13px] font-medium px-4 py-2 rounded-lg border border-white/15 bg-white/[0.04] text-white/70 hover:bg-white/[0.08] hover:text-white transition-colors"
+        >
+          <Mail className="w-3.5 h-3.5" />
+          {t.contact.email}
+        </a>
       </div>
-      <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
-      
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none" />
-      
-      <div className="relative z-10">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <Send className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <h2 className="text-2xl font-bold text-foreground">{t.contact.title}</h2>
-        </div>
-        
-        <p className="text-muted-foreground mb-8 max-w-lg leading-relaxed">
-          {t.contact.description}
-        </p>
-        
-        <div className="grid md:grid-cols-3 gap-4 mb-8">
-          {contacts.map((contact) => (
-            <a
-              key={contact.name}
-              href={contact.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-4 p-5 rounded-2xl bg-secondary/40 ${contact.color} border border-transparent hover:border-primary/20 transition-all group hover:-translate-y-1`}
-            >
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <contact.icon className="w-5 h-5 text-primary" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold text-foreground">{contact.name}</p>
-                <p className="text-sm text-muted-foreground truncate">{contact.handle}</p>
-              </div>
-              <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-            </a>
-          ))}
-        </div>
-        
-        <div className="flex justify-center">
-          <Button 
-            size="lg"
-            className="rounded-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity shadow-lg shadow-primary/25"
-            asChild
-          >
-            <a href="mailto:contato@brendamedeiros.dev">
-              <Mail className="w-4 h-4 mr-2" />
-              {t.contact.sendEmail}
-            </a>
-          </Button>
-        </div>
-      </div>
+
+      <p className="text-[11px] text-white/15 mt-6 font-mono">{t.footer.copyright}</p>
     </section>
   )
 }

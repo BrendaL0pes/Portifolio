@@ -1,15 +1,14 @@
 "use client"
 
 import { Navbar } from "@/components/portfolio/navbar"
+import { DividerLabel } from "@/components/portfolio/divider-label"
 import { HeroCard } from "@/components/portfolio/hero-card"
-import { ProjectCard } from "@/components/portfolio/project-card"
 import { SkillsCard } from "@/components/portfolio/skills-card"
-import { AboutCard } from "@/components/portfolio/about-card"
-import { HeroWidgetsRow } from "@/components/sections/HeroWidgetsRow"
-import { ArchitectureSection } from "@/components/sections/ArchitectureSection"
-import { PerformanceSection } from "@/components/sections/PerformanceSection"
+import { ArchitectureCard } from "@/components/portfolio/architecture-card"
+import { ProjectCard } from "@/components/portfolio/project-card"
+import { EngineeringProcessCard } from "@/components/portfolio/engineering-process-card"
+import { QaCard } from "@/components/portfolio/qa-card"
 import { ContactCard } from "@/components/portfolio/contact-card"
-import { Star, Sparkles } from "lucide-react"
 import { LanguageProvider, useLanguage } from "@/lib/language-context"
 
 function PortfolioContent() {
@@ -19,96 +18,70 @@ function PortfolioContent() {
     {
       title: t.projects.items.aiRequirements.title,
       description: t.projects.items.aiRequirements.description,
-      technologies: ["Java", "Spring Boot", "PostgreSQL", "LLM API"],
-      githubUrl: "https://github.com",
-      featured: true
+      technologies: ["Java", "Spring Boot", "LLM API", "PostgreSQL"],
+      icon: "brain" as const,
     },
     {
       title: t.projects.items.knowledgeBase.title,
       description: t.projects.items.knowledgeBase.description,
-      technologies: ["Java", "Spring Boot", "Vector Search", "LLM API"],
-      githubUrl: "https://github.com",
-      featured: true
+      technologies: ["Java", "RAG", "Vector Search", "LLM API"],
+      icon: "chat" as const,
     },
     {
       title: t.projects.items.gameUx.title,
       description: t.projects.items.gameUx.description,
       technologies: ["Java", "Spring Boot", "REST APIs", "PostgreSQL"],
-      githubUrl: "https://github.com",
-      featured: true
-    }
+      icon: "game" as const,
+    },
   ]
 
   return (
-    <main className="min-h-screen bg-background relative overflow-hidden">
-      {/* Global decorative gradient orbs */}
-      <div className="fixed top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-3xl pointer-events-none" />
-      <div className="fixed bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-accent/10 to-primary/10 blur-3xl pointer-events-none" />
-      
-      {/* Navbar */}
+    <main className="min-h-screen bg-background w-full overflow-x-hidden">
       <Navbar />
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-12">
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {/* Hero Section */}
-          <HeroCard />
-          
-          {/* About & Skills Row */}
-          <AboutCard />
-          <SkillsCard />
 
-          {/* Widgets Row (Status, GitHub, Spotify) */}
-          <HeroWidgetsRow />
-          
-          {/* Architecture Section (replaces Engineering) */}
-          <ArchitectureSection />
+      <div className="max-w-4xl mx-auto">
+        {/* 01 — Hero & widgets */}
+        <DividerLabel label={t.dividers.hero} />
+        <HeroCard />
 
-          {/* Projects Section */}
-          <div id="projects" className="col-span-full">
-            <div className="flex items-center gap-4 mb-8 mt-8">
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-primary fill-primary/30" />
-                <h2 className="text-2xl font-bold text-foreground">{t.projects.title}</h2>
-              </div>
-              <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
-            </div>
+        {/* 02 — Skills */}
+        <DividerLabel label={t.dividers.skills} />
+        <SkillsCard />
+
+        {/* 03 — Architecture */}
+        <DividerLabel label={t.dividers.architecture} />
+        <ArchitectureCard />
+
+        {/* 04 — Engineering Process */}
+        <DividerLabel label="04 — meu processo de engenharia" />
+        <EngineeringProcessCard />
+
+        {/* 05 — Projects */}
+        <DividerLabel label={t.dividers.projects} />
+        <section id="projects" className="px-6 py-10 border-b border-white/[0.05]">
+          <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-primary mb-3">
+            {t.projects.label}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                technologies={project.technologies}
+                icon={project.icon}
+              />
+            ))}
           </div>
+        </section>
 
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              technologies={project.technologies}
-              githubUrl={project.githubUrl}
-              featured={project.featured}
-            />
-          ))}
+        {/* 06 — QA */}
+        <DividerLabel label={t.dividers.qa} />
+        <QaCard />
 
-          {/* Performance Section */}
-          <PerformanceSection />
-          
-          {/* (Engineering section removed — replaced by ArchitectureSection above) */}
-          
-          {/* Contact Section */}
-          <ContactCard />
-        </div>
-        
-        {/* Footer */}
-        <footer className="mt-20 pt-8 border-t border-border/50">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <Sparkles className="w-3 h-3 text-primary-foreground" />
-              </div>
-              <p>© 2026 Brenda Medeiros Lopes</p>
-            </div>
-            <p className="flex items-center gap-1">
-              {t.footer.madeWith} <span className="text-primary">Next.js</span> & <span className="text-primary">Tailwind CSS</span>
-            </p>
-          </div>
-        </footer>
+        {/* 07 — Contact */}
+        <DividerLabel label={t.dividers.contact} />
+        <ContactCard />
       </div>
     </main>
   )
