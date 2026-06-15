@@ -12,8 +12,7 @@ export function GitHubWidget({ username = "BrendaL0pes" }: { username?: string }
       <div className="text-xs text-muted-foreground">Public repositories for <span className="font-medium">{username}</span></div>
       <ul className="mt-3 space-y-2 text-sm">
         <li>• https://github.com/BrendaL0pes/BrifAi</li>
-        <li>• example-repo-2</li>
-        <li>• example-repo-3</li>
+        <li>• https://github.com/BrendaL0pes/Graphic-Generator</li>
       </ul>
     </div>
   )
