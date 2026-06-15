@@ -8,3 +8,15 @@ node_modules/
 .next/
 .env*.local
 .DS_Store
+
+# Build output (gerado pelo next build)
+/out/
+
+# Arquivos soltos — imagens, PDFs e ZIPs não versionados
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.pdf
+*.zip
