@@ -39,7 +39,7 @@ export function ArchitectureCard() {
 
       <div className="mx-6 mt-4 border border-white/[0.09] rounded-xl overflow-hidden">
         {/* Tab bar */}
-        <div className="flex border-b border-white/[0.08] overflow-x-auto">
+        <div className="flex border-b border-white/[0.08] overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {tabs.map((tab) => (
             <button
               key={tab.id}

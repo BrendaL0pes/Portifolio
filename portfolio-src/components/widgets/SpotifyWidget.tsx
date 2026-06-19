@@ -1,7 +1,7 @@
 "use client"
 
 export function SpotifyWidget({ playlistId = "37i9dQZF1DXcBWIGoYBM5M" }: { playlistId?: string }) {
-  const src = `https://open.spotify.com/playlist/37i9dQZF1EQpj7X7UK8OOF?si=e3f65538ed6447d9/${playlistId}`
+  const src = `https://open.spotify.com/embed/playlist/37i9dQZF1EQpj7X7UK8OOF`
   return (
     <div className="p-0 bg-card rounded-lg overflow-hidden">
       <iframe

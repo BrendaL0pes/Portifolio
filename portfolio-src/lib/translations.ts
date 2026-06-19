@@ -21,7 +21,7 @@ export const translations = {
     hero: {
       status: "Disponível para oportunidades",
       greeting: "Olá, eu sou",
-      role: "Software Engineer",
+      role: "Engenheira de Software",
       description: "Construindo sistemas de backend inteligentes e ferramentas para desenvolvedores com práticas modernas de engenharia.",
       contactBtn: "Entre em contato",
       projectsBtn: "Ver projetos",
@@ -44,7 +44,7 @@ export const translations = {
         backend: "Backend",
         frontend: "Frontend",
         devops: "DevOps & ambiente",
-        ai: "AI integration",
+        ai: "Integração com IA",
       },
     },
     // Architecture
@@ -62,22 +62,22 @@ export const translations = {
       panels: {
         robust: {
           kicker: "ecossistema Java",
-          heading: "Clean Architecture para domínios complexos",
-          text: "Quando as regras de negócio são financeiras ou corporativas e erros custam caro. Spring Boot + arquitetura em camadas + JWT para sistemas que precisam durar anos.",
+          heading: "Separar camadas protege o domínio",
+          text: "Quando as regras de negócio são financeiras ou corporativas e erros custam caro, tendemos a separar bem as camadas e proteger o domínio. O stack costuma envolver Spring Boot, PostgreSQL e Docker — mas a arquitetura segue o problema, não o contrário.",
           contexts: ["Regras de negócio complexas", "Times maiores", "Alta carga", "Domínios financeiros"],
           stack: "Stack: Java · Spring Boot · PostgreSQL · Docker · JWT · Swagger",
         },
         web: {
           kicker: "ecossistema Next.js",
-          heading: "Server Components para performance e SEO",
-          text: "Quando a experiência do usuário é o produto. App Router do Next.js 14+, SSR onde importa, Client Components só para interatividade. TypeScript obrigatório.",
+          heading: "Onde renderizar importa",
+          text: "Quando a experiência do usuário é o produto, a escolha de onde renderizar importa. SSR, SSG ou Client Components — decidimos com base em SEO, performance e interatividade real, não por padrão.",
           contexts: ["SEO crítico", "Dashboards", "Landing pages", "UX-first"],
           stack: "Stack: Next.js · React · TypeScript · Tailwind · Cloudflare Pages",
         },
         api: {
           kicker: "APIs desacopladas",
-          heading: "Backend agnóstico de cliente",
-          text: "Quando o mesmo backend precisa servir web, mobile e terceiros. APIs RESTful com JSON bem documentado. O app consome — não sabe como o servidor funciona por dentro.",
+          heading: "Desacoplar a API do cliente",
+          text: "Quando o mesmo backend precisa servir web, mobile e terceiros, desacoplar a API do cliente é quase sempre a decisão certa. O contrato é o que importa — a implementação se adapta.",
           contexts: ["Multi-plataforma", "Apps mobile", "Integrações", "Microserviços"],
           stack: "Stack: REST APIs · Flutter · Dart · Spring Boot · OpenAPI",
         },
@@ -122,7 +122,7 @@ export const translations = {
     contact: {
       title: "Vamos conversar?",
       description: "Aberta a oportunidades de estágio, projetos e colaborações.",
-      email: "contato@brendamedeiros.dev",
+      email: "brendamedeiroslopes1@gmail.com",
     },
     // Footer
     footer: {
@@ -193,22 +193,22 @@ export const translations = {
       panels: {
         robust: {
           kicker: "Java ecosystem",
-          heading: "Clean Architecture for complex domains",
-          text: "When business rules are financial or corporate and mistakes are costly. Spring Boot + layered architecture + JWT for systems that need to last for years.",
+          heading: "Separating layers protects the domain",
+          text: "When business rules are financial or corporate and mistakes are costly, we tend to keep layers well-separated and protect the domain. The stack usually involves Spring Boot, PostgreSQL and Docker — but architecture follows the problem, not the other way around.",
           contexts: ["Complex business rules", "Larger teams", "High load", "Financial domains"],
           stack: "Stack: Java · Spring Boot · PostgreSQL · Docker · JWT · Swagger",
         },
         web: {
           kicker: "Next.js ecosystem",
-          heading: "Server Components for performance and SEO",
-          text: "When user experience is the product. Next.js 14+ App Router, SSR where it matters, Client Components only for interactivity. TypeScript required.",
+          heading: "Where to render matters",
+          text: "When user experience is the product, the choice of where to render matters. SSR, SSG or Client Components — we decide based on SEO, performance and real interactivity, not by default.",
           contexts: ["Critical SEO", "Dashboards", "Landing pages", "UX-first"],
           stack: "Stack: Next.js · React · TypeScript · Tailwind · Cloudflare Pages",
         },
         api: {
           kicker: "decoupled APIs",
-          heading: "Client-agnostic backend",
-          text: "When the same backend needs to serve web, mobile and third parties. RESTful APIs with well-documented JSON. The app consumes — it doesn't know how the server works inside.",
+          heading: "Decouple the API from the client",
+          text: "When the same backend needs to serve web, mobile and third parties, decoupling the API from the client is almost always the right call. The contract is what matters — the implementation adapts.",
           contexts: ["Multi-platform", "Mobile apps", "Integrations", "Microservices"],
           stack: "Stack: REST APIs · Flutter · Dart · Spring Boot · OpenAPI",
         },
@@ -253,7 +253,7 @@ export const translations = {
     contact: {
       title: "Let's talk?",
       description: "Open to internship opportunities, projects and collaborations.",
-      email: "contato@brendamedeiros.dev",
+      email: "brendamedeiroslopes1@gmail.com",
     },
     // Footer
     footer: {

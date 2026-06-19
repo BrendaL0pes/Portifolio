@@ -13,7 +13,7 @@ export function ContactCard() {
 
       <div className="flex justify-center gap-2.5 flex-wrap">
         <a
-          href="https://linkedin.com/in/brenda-medeiros-lopes"
+          href="https://www.linkedin.com/in/brenda-lopes-developer"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 text-[13px] font-medium px-4 py-2 rounded-lg border border-primary/40 bg-primary/20 text-accent hover:bg-primary/30 transition-colors"
@@ -24,7 +24,7 @@ export function ContactCard() {
           LinkedIn
         </a>
         <a
-          href="https://github.com/brendamedeiros"
+          href="https://github.com/BrendaL0pes"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 text-[13px] font-medium px-4 py-2 rounded-lg border border-white/15 bg-white/[0.04] text-white/70 hover:bg-white/[0.08] hover:text-white transition-colors"
