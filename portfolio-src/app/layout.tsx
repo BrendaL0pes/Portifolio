@@ -11,12 +11,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Brenda Medeiros Lopes | Software Engineer',
   description: 'Building intelligent backend systems and developer tools using modern software engineering practices',
-  generator: 'b',
-  icons: {
-    icon: [
-      { url: '/icon.svg?v=2', type: 'image/svg+xml' }
-    ]
-  },
 }
 
 export default function RootLayout({
