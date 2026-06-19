@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   description: 'Building intelligent backend systems and developer tools using modern software engineering practices',
   generator: 'b',
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/icon.svg?v=2', type: 'image/svg+xml' }
+    ]
   },
 }
 
