@@ -20,22 +20,23 @@ export const translations = {
     // Hero
     hero: {
       status: "Disponível para oportunidades",
-      greeting: "Olá, eu sou",
+      greeting: "Oi, eu sou a",
       role: "Engenheira de Software",
-      description: "Construindo sistemas de backend inteligentes e ferramentas para desenvolvedores com práticas modernas de engenharia.",
+      description: "Construindo soluções de software de ponta a ponta, combinando arquiteturas de backend estáveis com interfaces modernas e interativas.",
       contactBtn: "Entre em contato",
       projectsBtn: "Ver projetos",
     },
     // Widgets
     widgets: {
       githubLabel: "GitHub",
-      githubUser: "@brendamedeiros",
+      githubUser: "@BrendaL0pes",
       repos: "repos",
       public: "públicos",
       languages: "linguagens",
       nowPlaying: "agora tocando",
-      trackName: "Code & Bass",
-      trackDesc: "playlist autoral · foco & contrabaixo",
+      lastPlayed: "última tocada / playlist",
+      trackName: "whats playing on my spotify",
+      trackDesc: "my favorite songs right now",
     },
     // Skills
     skills: {
@@ -76,8 +77,8 @@ export const translations = {
         },
         api: {
           kicker: "APIs desacopladas",
-          heading: "Desacoplar a API do cliente",
-          text: "Quando o mesmo backend precisa servir web, mobile e terceiros, desacoplar a API do cliente é quase sempre a decisão certa. O contrato é o que importa — a implementação se adapta.",
+          heading: "Um único backend, múltiplos clientes",
+          text: "Quando o mesmo ecossistema precisa servir web, mobile e terceiros, desacoplar a API é quase sempre a decisão certa. O contrato é o que importa — a implementação se adapta.",
           contexts: ["Multi-plataforma", "Apps mobile", "Integrações", "Microserviços"],
           stack: "Stack: REST APIs · Flutter · Dart · Spring Boot · OpenAPI",
         },
@@ -105,17 +106,18 @@ export const translations = {
     // QA
     qa: {
       label: "Performance & QA",
-      title: "Garantindo resiliência sob pressão",
-      description: "Não presumo a performance do meu software — valido os limites dele com testes de carga antes de qualquer deploy.",
+      title: "Validando resiliência com dados reais",
+      description: "Discuto performance com base em métricas. Utilizo testes de carga e estresse para entender o comportamento do software e encontrar gargalos antes do ambiente de produção.",
       legend: {
-        throughput: "throughput",
-        sla: "limite SLA",
-        breaking: "ruptura",
+        throughput: "Vazão (Throughput)",
+        sla: "Limite de SLA",
+        breaking: "Ponto de Ruptura",
       },
       tools: {
         k6: { name: "Grafana k6", role: "Automação JS · CI/CD pipeline" },
         jmeter: { name: "Apache JMeter", role: "Estresse · ecossistema Java" },
         gatling: { name: "Gatling", role: "Alta concorrência · Scala" },
+        loadrunner: { name: "LoadRunner", role: "Testes corporativos · Protocolos complexos" },
       },
     },
     // Contact
@@ -153,7 +155,7 @@ export const translations = {
       status: "Available for opportunities",
       greeting: "Hi, I'm",
       role: "Software Engineer",
-      description: "Building intelligent backend systems and developer tools with modern engineering practices.",
+      description: "Building end-to-end software solutions, combining stable backend architectures with modern and interactive interfaces.",
       contactBtn: "Get in touch",
       projectsBtn: "View projects",
     },
@@ -236,17 +238,18 @@ export const translations = {
     // QA
     qa: {
       label: "Performance & QA",
-      title: "Ensuring resilience under pressure",
-      description: "I don't assume my software's performance — I validate its limits with load tests before any deploy.",
+      title: "Validating resilience with real data",
+      description: "I discuss performance based on metrics. I use load and stress testing to understand software behavior and identify bottlenecks before reaching production.",
       legend: {
-        throughput: "throughput",
-        sla: "SLA limit",
-        breaking: "breaking point",
+        throughput: "Throughput",
+        sla: "SLA Limit",
+        breaking: "Breaking Point",
       },
       tools: {
         k6: { name: "Grafana k6", role: "JS automation · CI/CD pipeline" },
         jmeter: { name: "Apache JMeter", role: "Stress · Java ecosystem" },
         gatling: { name: "Gatling", role: "High concurrency · Scala" },
+        loadrunner: { name: "LoadRunner", role: "Enterprise testing · Complex protocols" },
       },
     },
     // Contact

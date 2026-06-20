@@ -2,14 +2,16 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { Star, Sparkles } from "lucide-react"
-import { GitHubWidget } from "@/components/widgets/GitHubWidget"
+import { TerminalWidget } from "@/components/widgets/TerminalWidget"
 import { SpotifyWidget } from "@/components/widgets/SpotifyWidget"
+import { GithubStreakWidget } from "@/components/widgets/GithubStreakWidget"
+import { LocationWidget } from "@/components/widgets/LocationWidget"
 
 export function HeroCard() {
   const { t } = useLanguage()
 
   return (
-    <section id="home" className="relative px-6 py-10 border-b border-white/[0.05] overflow-hidden">
+    <section id="home" className="relative px-6 py-10 rounded-2xl border border-white/[0.05] bg-card overflow-hidden mb-6 mt-6">
       {/* Gradient orbs */}
       <div className="pointer-events-none absolute -top-10 -right-10 w-72 h-72 rounded-full bg-gradient-to-br from-primary/25 to-accent/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-16 left-0 w-56 h-56 rounded-full bg-gradient-to-tr from-accent/15 to-primary/15 blur-3xl" />
@@ -28,7 +30,7 @@ export function HeroCard() {
           {/* Status badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/[0.08] mb-4">
             <span className="relative inline-flex items-center justify-center w-2 h-2">
-              <span className="absolute w-2 h-2 rounded-full bg-emerald-500 opacity-60 animate-ping-aim" />
+              <span className="absolute w-2 h-2 rounded-full bg-emerald-500 opacity-60 animate-ping-aim motion-reduce:animate-none" />
               <span className="relative w-1.5 h-1.5 rounded-full bg-emerald-500" />
             </span>
             <span className="text-[11px] font-medium text-emerald-500">{t.hero.status}</span>
@@ -36,11 +38,9 @@ export function HeroCard() {
 
           <h1 className="text-[26px] font-medium leading-tight text-white mb-2 text-balance">
             {t.hero.greeting}{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient">
+            <span className="text-primary">
               Brenda
             </span>
-            <br />
-            {t.hero.role}
           </h1>
           <p className="text-[13px] text-white/45 leading-relaxed max-w-[420px]">
             {t.hero.description}
@@ -60,12 +60,15 @@ export function HeroCard() {
               {t.hero.projectsBtn}
             </a>
           </div>
+
+          <LocationWidget />
         </div>
 
         {/* Right: widgets */}
         <div className="flex-1 min-w-[200px] flex flex-col gap-2">
-          <GitHubWidget />
+          {/* <TerminalWidget /> */}
           <SpotifyWidget />
+          <GithubStreakWidget />
         </div>
       </div>
     </section>

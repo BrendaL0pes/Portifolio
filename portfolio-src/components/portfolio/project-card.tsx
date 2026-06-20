@@ -10,10 +10,10 @@ interface ProjectCardProps {
   icon: "brain" | "chat" | "game"
 }
 
-const iconConfig: Record<ProjectCardProps["icon"], { Icon: LucideIcon; box: string; color: string }> = {
-  brain: { Icon: Brain, box: "bg-primary/15 border-primary/30", color: "text-accent" },
-  chat: { Icon: MessageCircle, box: "bg-teal-500/15 border-teal-500/30", color: "text-teal-300" },
-  game: { Icon: Gamepad2, box: "bg-amber-500/15 border-amber-500/30", color: "text-amber-400" },
+const iconConfig: Record<ProjectCardProps["icon"], { Icon: LucideIcon; box: string; color: string; cardBorder: string }> = {
+  brain: { Icon: Brain, box: "bg-cyan-500/15 border-cyan-500/30", color: "text-cyan-400", cardBorder: "border-cyan-500/30" },
+  chat: { Icon: MessageCircle, box: "bg-cyan-500/15 border-cyan-500/30", color: "text-cyan-400", cardBorder: "border-cyan-500/30" },
+  game: { Icon: Gamepad2, box: "bg-cyan-500/15 border-cyan-500/30", color: "text-cyan-400", cardBorder: "border-cyan-500/30" },
 }
 
 export function ProjectCard({
@@ -23,10 +23,10 @@ export function ProjectCard({
   githubUrl = "https://github.com",
   icon,
 }: ProjectCardProps) {
-  const { Icon, box, color } = iconConfig[icon]
+  const { Icon, box, color, cardBorder } = iconConfig[icon]
 
   return (
-    <div className="flex flex-col gap-2 rounded-xl border border-white/[0.09] bg-white/[0.03] p-3.5 transition-colors hover:border-white/[0.18]">
+    <div className={`flex flex-col gap-2 rounded-xl border ${cardBorder} bg-white/[0.03] p-3.5 transition-colors hover:border-white/[0.18]`}>
       <div className="flex items-start justify-between">
         <div className={`w-8 h-8 rounded-lg border flex items-center justify-center ${box}`}>
           <Icon className={`w-4 h-4 ${color}`} />
@@ -41,11 +41,7 @@ export function ProjectCard({
         {technologies.map((tech, i) => (
           <span
             key={tech}
-            className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${
-              i === technologies.length - 1
-                ? "bg-white/[0.06] text-white/45 border-white/[0.12]"
-                : `${box} ${color}`
-            }`}
+            className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${box} ${color}`}
           >
             {tech}
           </span>

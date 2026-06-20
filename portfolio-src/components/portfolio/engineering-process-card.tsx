@@ -44,8 +44,8 @@ const steps = [
 
 export function EngineeringProcessCard() {
   return (
-    <section className="px-6 py-10 border-b border-white/[0.05]">
-      <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-primary mb-3">
+    <section className="relative px-6 py-10 rounded-2xl border border-white/[0.05] bg-card overflow-hidden mb-6">
+      <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-accent animate-drop-shadow-neon mb-3">
         Processo de engenharia
       </p>
       <p className="text-lg font-medium text-foreground mb-1">My Engineering Process</p>

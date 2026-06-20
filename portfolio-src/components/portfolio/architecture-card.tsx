@@ -15,29 +15,25 @@ export function ArchitectureCard() {
 
   const tagStyles = {
     robust: "bg-primary/15 text-accent border-primary/30",
-    web: "bg-teal-500/15 text-teal-300 border-teal-500/30",
-    api: "bg-amber-500/15 text-amber-400 border-amber-500/30",
+    web: "bg-primary/15 text-accent border-primary/30",
+    api: "bg-primary/15 text-accent border-primary/30",
   }
 
   const stackBoxStyles = {
-    robust: "bg-primary/[0.06] border-primary/15",
-    web: "bg-teal-500/[0.06] border-teal-500/15",
-    api: "bg-amber-500/[0.06] border-amber-500/15",
+    robust: "bg-primary/15 border-primary/30",
+    web: "bg-primary/15 border-primary/30",
+    api: "bg-primary/15 border-primary/30",
   }
 
   const panel = t.architecture.panels[activeTab]
 
   return (
-    <section id="architecture" className="pb-10 border-b border-white/[0.05]">
-      <div className="px-6 pt-6">
-        <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-primary mb-3">
-          {t.architecture.label}
-        </p>
-        <p className="text-lg font-medium text-white mb-1">{t.architecture.title}</p>
-        <p className="text-xs text-white/35">{t.architecture.subtitle}</p>
-      </div>
+    <section id="architecture" className="relative px-6 py-10 rounded-2xl border border-white/[0.05] bg-card overflow-hidden mb-6">
+      <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-accent animate-drop-shadow-neon mb-3">
+        {t.architecture.label}
+      </p>
 
-      <div className="mx-6 mt-4 border border-white/[0.09] rounded-xl overflow-hidden">
+      <div className="mt-4 border border-white/[0.09] rounded-xl overflow-hidden">
         {/* Tab bar */}
         <div className="flex border-b border-white/[0.08] overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {tabs.map((tab) => (
@@ -80,7 +76,7 @@ export function ArchitectureCard() {
               ))}
             </div>
             <div className={`mt-3 p-2.5 rounded-lg border ${stackBoxStyles[activeTab]}`}>
-              <p className="text-[11px] text-white/40 leading-relaxed">{panel.stack}</p>
+              <p className="text-[11px] text-accent leading-relaxed font-medium">{panel.stack}</p>
             </div>
           </div>
         </div>

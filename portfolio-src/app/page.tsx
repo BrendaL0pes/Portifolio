@@ -1,15 +1,15 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import { Navbar } from "@/components/portfolio/navbar"
-import { DividerLabel } from "@/components/portfolio/divider-label"
 import { HeroCard } from "@/components/portfolio/hero-card"
 import { SkillsCard } from "@/components/portfolio/skills-card"
-import { ArchitectureCard } from "@/components/portfolio/architecture-card"
-import { ProjectCard } from "@/components/portfolio/project-card"
-import { EngineeringProcessCard } from "@/components/portfolio/engineering-process-card"
-import { QaCard } from "@/components/portfolio/qa-card"
-import { ContactCard } from "@/components/portfolio/contact-card"
 import { LanguageProvider, useLanguage } from "@/lib/language-context"
+
+const ArchitectureCard = dynamic(() => import("@/components/portfolio/architecture-card").then(mod => mod.ArchitectureCard))
+const ProjectCard = dynamic(() => import("@/components/portfolio/project-card").then(mod => mod.ProjectCard))
+const QaCard = dynamic(() => import("@/components/portfolio/qa-card").then(mod => mod.QaCard))
+const ContactCard = dynamic(() => import("@/components/portfolio/contact-card").then(mod => mod.ContactCard))
 
 function PortfolioContent() {
   const { t } = useLanguage()
@@ -40,26 +40,14 @@ function PortfolioContent() {
       <Navbar />
 
       <div className="max-w-4xl mx-auto">
-        {/* 01 — Hero & widgets */}
-        <DividerLabel label={t.dividers.hero} />
         <HeroCard />
 
-        {/* 02 — Skills */}
-        <DividerLabel label={t.dividers.skills} />
         <SkillsCard />
 
-        {/* 03 — Architecture */}
-        <DividerLabel label={t.dividers.architecture} />
         <ArchitectureCard />
 
-        {/* 04 — Engineering Process */}
-        <DividerLabel label="04 — meu processo de engenharia" />
-        <EngineeringProcessCard />
-
-        {/* 05 — Projects */}
-        <DividerLabel label={t.dividers.projects} />
-        <section id="projects" className="px-6 py-10 border-b border-white/[0.05]">
-          <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-primary mb-3">
+        <section id="projects" className="relative px-6 py-10 rounded-2xl border border-white/[0.05] bg-card overflow-hidden mb-6">
+          <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-accent animate-drop-shadow-neon mb-3">
             {t.projects.label}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
@@ -75,12 +63,8 @@ function PortfolioContent() {
           </div>
         </section>
 
-        {/* 06 — QA */}
-        <DividerLabel label={t.dividers.qa} />
         <QaCard />
 
-        {/* 07 — Contact */}
-        <DividerLabel label={t.dividers.contact} />
         <ContactCard />
       </div>
     </main>

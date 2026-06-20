@@ -13,24 +13,24 @@ export function SkillsCard() {
     },
     {
       title: t.skills.categories.frontend,
-      tagClass: "bg-teal-500/15 text-teal-300 border-teal-500/30",
+      tagClass: "bg-primary/15 text-accent border-primary/30",
       tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     },
     {
       title: t.skills.categories.devops,
-      tagClass: "bg-white/[0.06] text-white/45 border-white/[0.12]",
+      tagClass: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
       tags: ["Docker", "Git", "Linux", "Swagger"],
     },
     {
       title: t.skills.categories.ai,
-      tagClass: "bg-amber-500/15 text-amber-400 border-amber-500/30",
+      tagClass: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
       tags: ["RAG Systems", "Prompt Eng.", "LLM APIs", "ChromaDB"],
     },
   ]
 
   return (
-    <section id="skills" className="px-6 py-10 border-b border-white/[0.05]">
-      <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-primary mb-3">
+    <section id="skills" className="relative px-6 py-10 rounded-2xl border border-white/[0.05] bg-card overflow-hidden mb-6">
+      <p className="text-[10px] font-medium tracking-[0.1em] uppercase text-accent animate-drop-shadow-neon mb-3">
         {t.skills.label}
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
