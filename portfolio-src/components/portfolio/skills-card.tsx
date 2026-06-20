@@ -18,12 +18,12 @@ export function SkillsCard() {
     },
     {
       title: t.skills.categories.devops,
-      tagClass: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+      tagClass: "bg-logo-green/15 text-logo-green border-logo-green/30",
       tags: ["Docker", "Git", "Linux", "Swagger"],
     },
     {
       title: t.skills.categories.ai,
-      tagClass: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+      tagClass: "bg-logo-green/15 text-logo-green border-logo-green/30",
       tags: ["RAG Systems", "Prompt Eng.", "LLM APIs", "ChromaDB"],
     },
   ]

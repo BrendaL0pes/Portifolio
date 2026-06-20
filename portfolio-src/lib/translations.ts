@@ -19,20 +19,15 @@ export const translations = {
     },
     // Hero
     hero: {
-      status: "Disponível para oportunidades",
-      greeting: "Oi, eu sou a",
+      status: "● Pronta para o próximo desafio!",
+      greeting: "Olá, me chamo",
       role: "Engenheira de Software",
-      description: "Construindo soluções de software de ponta a ponta, combinando arquiteturas de backend estáveis com interfaces modernas e interativas.",
+      description: "Criando soluções de software de ponta a ponta através de práticas modernas de engenharia, sistemas de backend escaláveis e aplicações web responsivas.",
       contactBtn: "Entre em contato",
       projectsBtn: "Ver projetos",
     },
     // Widgets
     widgets: {
-      githubLabel: "GitHub",
-      githubUser: "@BrendaL0pes",
-      repos: "repos",
-      public: "públicos",
-      languages: "linguagens",
       nowPlaying: "agora tocando",
       lastPlayed: "última tocada / playlist",
       trackName: "whats playing on my spotify",
@@ -88,24 +83,55 @@ export const translations = {
     projects: {
       label: "Vitrine de projetos",
       title: "Projetos em destaque",
+      modalLabels: {
+        type: "TIPO",
+        backend: "BACK-END",
+        frontend: "FRONT-END",
+        database: "BANCO DE DADOS",
+        overview: "Visão geral",
+        github: "GitHub",
+        visitSite: "Acessar site",
+      },
       items: {
         aiRequirements: {
           title: "AI Requirements Engineer",
           description: "Plataforma LLM para gerar épicos, user stories e critérios de aceitação automaticamente.",
+          tags: ["LLM", "BACK-END", "AI"],
+          type: "Aplicação Web / API",
+          backend: "Java (Spring Boot)",
+          frontend: "React / Next.js",
+          database: "PostgreSQL",
+          overview: "Uma plataforma focada em automatizar o processo de engenharia de requisitos utilizando Modelos de Linguagem de Larga Escala (LLM). O sistema recebe uma breve descrição da funcionalidade e gera automaticamente Épicos, User Stories e Critérios de Aceitação detalhados, poupando horas de trabalho manual de POs e analistas.",
         },
         knowledgeBase: {
           title: "Knowledge Base AI Chat",
           description: "Sistema RAG que responde perguntas usando documentação carregada pelo usuário.",
+          tags: ["RAG", "VECTOR SEARCH", "AI"],
+          type: "Assistente Inteligente",
+          backend: "Python / Java",
+          frontend: "Interface de Chat",
+          database: "Vector Database",
+          overview: "Implementação de Retrieval-Augmented Generation (RAG) que permite aos usuários interagir com uma base de conhecimento própria. O sistema indexa documentos PDF/TXT e responde de forma contextual, citando as fontes de onde extraiu as informações.",
         },
         gameUx: {
-          title: "Game UX Experiment Platform",
-          description: "Backend para coletar dados de interação de jogadores e avaliar experimentos de UX.",
+          title: "Gerador de Gráficos",
+          description: "Plataforma para gerar gráficos a partir de inferência de lasers",
+          tags: ["DATA VIZ", "FRONT-END"],
+          type: "Ferramenta de Visualização",
+          backend: "Node.js",
+          frontend: "React / D3.js",
+          database: "MongoDB",
+          overview: "Ferramenta desenvolvida para processar dados brutos derivados de sistemas de inferência a laser e transformá-los em representações gráficas interativas. Facilita a visualização de anomalias e padrões comportamentais nos dados coletados.",
         },
       },
     },
     // QA
     qa: {
       label: "Performance & QA",
+      tabs: {
+        functional: "Testes Funcionais",
+        performance: "Testes de Desempenho",
+      },
       title: "Validando resiliência com dados reais",
       description: "Discuto performance com base em métricas. Utilizo testes de carga e estresse para entender o comportamento do software e encontrar gargalos antes do ambiente de produção.",
       legend: {
@@ -113,11 +139,17 @@ export const translations = {
         sla: "Limite de SLA",
         breaking: "Ponto de Ruptura",
       },
-      tools: {
+      toolsPerformance: {
         k6: { name: "Grafana k6", role: "Automação JS · CI/CD pipeline" },
         jmeter: { name: "Apache JMeter", role: "Estresse · ecossistema Java" },
         gatling: { name: "Gatling", role: "Alta concorrência · Scala" },
         loadrunner: { name: "LoadRunner", role: "Testes corporativos · Protocolos complexos" },
+      },
+      toolsFunctional: {
+        junit: { name: "JUnit", role: "Testes Unitários · Java", coverage: "Cobertura: 92%" },
+        cucumber: { name: "Cucumber", role: "BDD · Especificações executáveis", scenarios: "Cenários: 24/24 Passaram" },
+        selenium: { name: "Selenium", role: "Testes E2E · Automação UI" },
+        postman: { name: "Postman / Newman", role: "Testes de Contrato · API" },
       },
     },
     // Contact
@@ -129,7 +161,7 @@ export const translations = {
     // Footer
     footer: {
       copyright: "© 2026 Brenda Medeiros Lopes · Next.js & Tailwind CSS",
-      madeWith: "Feito com",
+      madeWith: "Feito com <",
     },
   },
   en: {
@@ -152,10 +184,10 @@ export const translations = {
     },
     // Hero
     hero: {
-      status: "Available for opportunities",
-      greeting: "Hi, I'm",
+      status: "● Ready for the next project",
+      greeting: "Hi, I am",
       role: "Software Engineer",
-      description: "Building end-to-end software solutions, combining stable backend architectures with modern and interactive interfaces.",
+      description: "Building end-to-end software solutions through modern engineering practices, scalable backend systems, and responsive web applications.",
       contactBtn: "Get in touch",
       projectsBtn: "View projects",
     },
@@ -220,24 +252,55 @@ export const translations = {
     projects: {
       label: "Project showcase",
       title: "Featured projects",
+      modalLabels: {
+        type: "TYPE",
+        backend: "BACK-END",
+        frontend: "FRONT-END",
+        database: "DATABASE",
+        overview: "Overview",
+        github: "GitHub",
+        visitSite: "Visit site",
+      },
       items: {
         aiRequirements: {
           title: "AI Requirements Engineer",
           description: "LLM platform to automatically generate epics, user stories and acceptance criteria.",
+          tags: ["LLM", "BACK-END", "AI"],
+          type: "Web App / API",
+          backend: "Java (Spring Boot)",
+          frontend: "React / Next.js",
+          database: "PostgreSQL",
+          overview: "A platform focused on automating the requirements engineering process using Large Language Models (LLM). The system takes a brief description of a feature and automatically generates detailed Epics, User Stories, and Acceptance Criteria, saving hours of manual work for POs and analysts.",
         },
         knowledgeBase: {
           title: "Knowledge Base AI Chat",
           description: "RAG system that answers questions using documentation uploaded by the user.",
+          tags: ["RAG", "VECTOR SEARCH", "AI"],
+          type: "Smart Assistant",
+          backend: "Python / Java",
+          frontend: "Chat Interface",
+          database: "Vector Database",
+          overview: "A Retrieval-Augmented Generation (RAG) implementation that allows users to interact with their own knowledge base. The system indexes PDF/TXT documents and provides contextual answers, citing the sources from which it extracted the information.",
         },
         gameUx: {
-          title: "Game UX Experiment Platform",
-          description: "Backend to collect player interaction data and evaluate UX experiments.",
+          title: "Chart Generator",
+          description: "Platform to generate charts from laser inference data",
+          tags: ["DATA VIZ", "FRONT-END"],
+          type: "Visualization Tool",
+          backend: "Node.js",
+          frontend: "React / D3.js",
+          database: "MongoDB",
+          overview: "A tool developed to process raw data derived from laser inference systems and transform it into interactive graphical representations. It makes it easier to visualize anomalies and behavioral patterns in the collected data.",
         },
       },
     },
     // QA
     qa: {
       label: "Performance & QA",
+      tabs: {
+        functional: "Functional Tests",
+        performance: "Performance Tests",
+      },
       title: "Validating resilience with real data",
       description: "I discuss performance based on metrics. I use load and stress testing to understand software behavior and identify bottlenecks before reaching production.",
       legend: {
@@ -245,11 +308,17 @@ export const translations = {
         sla: "SLA Limit",
         breaking: "Breaking Point",
       },
-      tools: {
+      toolsPerformance: {
         k6: { name: "Grafana k6", role: "JS automation · CI/CD pipeline" },
         jmeter: { name: "Apache JMeter", role: "Stress · Java ecosystem" },
         gatling: { name: "Gatling", role: "High concurrency · Scala" },
         loadrunner: { name: "LoadRunner", role: "Enterprise testing · Complex protocols" },
+      },
+      toolsFunctional: {
+        junit: { name: "JUnit", role: "Unit Testing · Java", coverage: "Coverage: 92%" },
+        cucumber: { name: "Cucumber", role: "BDD · Executable specifications", scenarios: "Scenarios: 24/24 Passed" },
+        selenium: { name: "Selenium", role: "E2E Testing · UI Automation" },
+        postman: { name: "Postman / Newman", role: "Contract Testing · API" },
       },
     },
     // Contact

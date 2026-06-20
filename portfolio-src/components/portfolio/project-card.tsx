@@ -8,12 +8,13 @@ interface ProjectCardProps {
   technologies: string[]
   githubUrl?: string
   icon: "brain" | "chat" | "game"
+  onClick?: () => void
 }
 
 const iconConfig: Record<ProjectCardProps["icon"], { Icon: LucideIcon; box: string; color: string; cardBorder: string }> = {
-  brain: { Icon: Brain, box: "bg-cyan-500/15 border-cyan-500/30", color: "text-cyan-400", cardBorder: "border-cyan-500/30" },
-  chat: { Icon: MessageCircle, box: "bg-cyan-500/15 border-cyan-500/30", color: "text-cyan-400", cardBorder: "border-cyan-500/30" },
-  game: { Icon: Gamepad2, box: "bg-cyan-500/15 border-cyan-500/30", color: "text-cyan-400", cardBorder: "border-cyan-500/30" },
+  brain: { Icon: Brain, box: "bg-logo-green/15 border-logo-green/30", color: "text-logo-green", cardBorder: "border-logo-green/30" },
+  chat: { Icon: MessageCircle, box: "bg-logo-green/15 border-logo-green/30", color: "text-logo-green", cardBorder: "border-logo-green/30" },
+  game: { Icon: Gamepad2, box: "bg-logo-green/15 border-logo-green/30", color: "text-logo-green", cardBorder: "border-logo-green/30" },
 }
 
 export function ProjectCard({
@@ -22,16 +23,20 @@ export function ProjectCard({
   technologies,
   githubUrl = "https://github.com",
   icon,
+  onClick,
 }: ProjectCardProps) {
   const { Icon, box, color, cardBorder } = iconConfig[icon]
 
   return (
-    <div className={`flex flex-col gap-2 rounded-xl border ${cardBorder} bg-white/[0.03] p-3.5 transition-colors hover:border-white/[0.18]`}>
+    <div 
+      className={`flex flex-col gap-2 rounded-xl border ${cardBorder} bg-white/[0.03] p-3.5 transition-colors hover:border-white/[0.18] cursor-pointer`}
+      onClick={onClick}
+    >
       <div className="flex items-start justify-between">
         <div className={`w-8 h-8 rounded-lg border flex items-center justify-center ${box}`}>
           <Icon className={`w-4 h-4 ${color}`} />
         </div>
-        <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`Ver ${title} no GitHub`}>
+        <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`Ver ${title} no GitHub`} onClick={(e) => e.stopPropagation()}>
           <Github className="w-3.5 h-3.5 text-white/25 hover:text-white/60 transition-colors" />
         </a>
       </div>

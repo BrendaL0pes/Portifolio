@@ -28,12 +28,12 @@ export function HeroCard() {
         {/* Left: intro */}
         <div className="flex-1 min-w-[200px]">
           {/* Status badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/[0.08] mb-4">
-            <span className="relative inline-flex items-center justify-center w-2 h-2">
-              <span className="absolute w-2 h-2 rounded-full bg-emerald-500 opacity-60 animate-ping-aim motion-reduce:animate-none" />
-              <span className="relative w-1.5 h-1.5 rounded-full bg-emerald-500" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-logo-green/30 bg-logo-green/[0.08] mb-4">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-logo-green opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-logo-green" />
             </span>
-            <span className="text-[11px] font-medium text-emerald-500">{t.hero.status}</span>
+            <span className="text-[11px] font-medium text-logo-green animate-drop-shadow-neon-green">{t.hero.status}</span>
           </div>
 
           <h1 className="text-[26px] font-medium leading-tight text-white mb-2 text-balance">
